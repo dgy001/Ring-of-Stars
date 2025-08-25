@@ -1,8 +1,0 @@
-{
-  "framework": "vite",
-  "build": {
-    "env": {
-      "VITE_API_KEY": "@api_key"
-    }
-  }
-}

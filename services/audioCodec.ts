@@ -124,11 +124,8 @@ const drawOrbit = (ctx: CanvasRenderingContext2D, features: AudioFeatures) => {
     const centerX = width / 2;
     const centerY = height / 2;
 
-    // Background gradient
-    const bgGrad = ctx.createRadialGradient(centerX, centerY, 50, centerX, centerY, width / 2);
-    bgGrad.addColorStop(0, '#0c0a18');
-    bgGrad.addColorStop(1, '#010203');
-    ctx.fillStyle = bgGrad;
+    // Pure black background
+    ctx.fillStyle = '#000000';
     ctx.fillRect(0, 0, width, height);
     
     const palette = generateColorPalette(features);

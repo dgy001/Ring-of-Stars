@@ -49,19 +49,21 @@ export const FileUploader: React.FC<FileUploaderProps> = ({ onFileUpload, accept
       onDragLeave={handleDragLeave}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
-      className={`relative border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all duration-300 ${isDragging ? 'border-purple-500 bg-purple-900/20' : 'border-gray-600 hover:border-purple-400 hover:bg-gray-800'}`}
+      className={`relative bg-gray-900/50 border border-gray-800 rounded-xl p-8 text-center cursor-pointer transition-all duration-300 ${isDragging ? 'border-white bg-gray-800' : 'hover:border-gray-700'}`}
     >
       <input
         type="file"
         accept={accept}
         onChange={handleFileChange}
         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+        aria-label={text}
       />
-      <div className="flex flex-col items-center justify-center text-gray-400">
-        <div className={`transition-transform duration-300 ${isDragging ? 'scale-110' : ''}`}>
+      <div className="flex flex-col items-center justify-center text-gray-400 pointer-events-none">
+        <div className={`transition-transform duration-300 w-16 h-16 bg-gray-800/80 rounded-full flex items-center justify-center ${isDragging ? 'scale-110' : ''}`}>
          {icon}
         </div>
-        <p className="mt-2 text-sm">{text}</p>
+        <p className="mt-4 text-sm font-semibold">{text}</p>
+        <p className="mt-1 text-xs text-gray-500">or click to browse</p>
       </div>
     </div>
   );

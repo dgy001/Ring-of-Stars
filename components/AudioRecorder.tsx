@@ -90,7 +90,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({ onRecordingComplet
   const renderButtonContent = () => {
       switch (status) {
           case 'idle':
-              return <><IconMic /><span>Start Recording</span></>;
+              return <><IconMic /><span>Record Audio</span></>;
           case 'permission':
               return <><IconLoader /><span>Awaiting permission...</span></>;
           case 'recording':
@@ -105,13 +105,13 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({ onRecordingComplet
       <button
         onClick={status === 'recording' ? handleStopRecording : handleStartRecording}
         disabled={status === 'permission'}
-        className={`w-full flex items-center justify-center gap-2 font-bold py-3 px-4 rounded-lg transition-colors duration-300
-            ${status === 'recording' ? 'bg-red-800/80 hover:bg-red-700/80 text-white' : 'bg-purple-600 hover:bg-purple-700 text-white'}
-            disabled:bg-purple-900/50 disabled:cursor-not-allowed`}
+        className={`w-full flex items-center justify-center gap-2 font-semibold py-3 px-4 rounded-lg transition-colors duration-300
+            ${status === 'recording' ? 'bg-red-900/50 hover:bg-red-900 text-white' : 'bg-gray-800 hover:bg-gray-700 text-gray-200'}
+            disabled:bg-gray-800/50 disabled:cursor-not-allowed`}
       >
         {renderButtonContent()}
       </button>
-      {status === 'error' && <p className="text-red-400 text-sm mt-2">{error}</p>}
+      {status === 'error' && <p className="text-red-400 text-sm mt-3">{error}</p>}
     </div>
   );
 };
