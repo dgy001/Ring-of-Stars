@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Audio Orbit",
+  "description": "An application that transforms audio files into visually stunning, reversible 'orbit' images. It generates an artistic representation of the audio's sonic landscape as celestial rings of light, while embedding the original audio data within the image itself for perfect reconstruction.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
